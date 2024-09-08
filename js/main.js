@@ -1,4 +1,4 @@
-
+//Store Items
 let Store = [
 	{ id: 0, category: 'Chips', type: 'Doritos', stock: true, price: 1, quantity: 0, image: './img/doritos.jpeg', description: 'Includes 1 (10.5oz) bag of Doritos Tortilla Chips, Spicy Nacho flavor'},
 	{ id: 1, category: 'Chips', type: 'Ruffles', stock: true, price: 1, quantity: 0, image: './img/ruffles.jpeg', description: 'Includes 1 (10.5oz) bag of Ruffles, Cheddar & Sour Cream flavor' },
@@ -30,7 +30,7 @@ const getMoney = () => {
 
 		for(let store of Store){
 	
-
+		//Created table with inc/dec buttons
 		let tBody = document.createElement('tbody');	 
 		let th = document.createElement('th');	 
 		let tr = document.createElement('tr');	
@@ -70,7 +70,8 @@ const getMoney = () => {
 		tr.appendChild(td2);
 		tBody.appendChild(tr);
 		table.appendChild(tBody);	
-					
+				
+	//Enhance size of picture of item when hoover with mouse
 		storeItems.addEventListener('mouseover' , (e) => {
 			// console.log(desc)
 			if(desc.style.display = 'none'){
@@ -80,11 +81,11 @@ const getMoney = () => {
 				desc.style.display = 'none';
 			}
 		})
-
+	//Picture returns to original size
 		storeItems.addEventListener('mouseout' , (e) => {
 			desc.style.display = 'none'
 		})
-
+	//Bulb for light/dark mode
 		bulb.addEventListener('click', (e)  => {
 			
 			addBtn.classList.toggle('colorMode');
@@ -92,6 +93,7 @@ const getMoney = () => {
 			
 		})
 
+	//Inc items that are choosen
 		addBtn.addEventListener('click', (e) => {
 
 			let daStore = [...Store];
@@ -120,7 +122,7 @@ const getMoney = () => {
 			}
 
 		})
-
+	//Dec items that are choosen
 		subBtn.addEventListener('click', (e) => {
 			// console.log(store.quantity)
 			let daStore = [...Store];
@@ -141,7 +143,7 @@ const getMoney = () => {
 				total.textContent = `$${quantity}.00`;
 			}
 		})
-
+	//Clear cart of all items that were added
 		clearCart.addEventListener('click', (e) => {
 
 			let daStore = [...Store];
